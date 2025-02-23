@@ -29,12 +29,17 @@ header {
     font-weight: bold;
 }
 
-.user-options a {
-    color: white;
-    text-decoration: none;
-    margin-left: 1rem;
+.user-options ul {
+    display: flex;
+    gap: 1rem;
 }
 
-.user-options a:hover {
+.user-options a, .user-options button {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.user-options a:hover, .user-options button:hover {
     text-decoration: underline;
 }
