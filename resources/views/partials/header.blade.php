@@ -11,7 +11,7 @@
     <div class="menu">☰</div>
 
     <div class="logo">
-        <a href="{{ route('home') }}">F1 Fans</a>
+        <a href="{{ route('home') }}">Speed Tribe</a>
     </div>
 
     <nav class="user-options">
@@ -24,8 +24,9 @@
                 <li>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" style="background: none; border: none; color: white; cursor: pointer;">Logout</button>
+                        <button type="submit">Logout</button>
                     </form>
+
                 </li>
             @endguest
         </ul>

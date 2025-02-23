@@ -1,0 +1,6 @@
+.home-image {
+    width: 100vw; /* prend toute la largeur de l'écran */
+    max-height: 80vh; /* limite la hauteur à 80% de l'écran */
+    object-fit: cover; /* ajuste l'image sans la déformer */
+    display: block;
+}

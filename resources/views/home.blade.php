@@ -1,18 +1,19 @@
 <!-- resources/views/home.blade.php -->
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil F1</title>
+    <title>Home Page F1</title>
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 </head>
 <body>
 @include('partials.header')
 
-
 <main>
-    <h1>Bienvenue sur le site des fans de F1</h1>
+    <img src="{{ asset('images/f1_background.jpg') }}" alt="F1 Race" class="home-image">
+    <h1>Welcome to the F1 Fans Website</h1>
 </main>
 </body>
 </html>
