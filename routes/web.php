@@ -9,3 +9,8 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return 'Mon projet Laravel est bien configuré !';
 });
+
+
+Route::get('/home', function () {
+    return view('home');
+});
