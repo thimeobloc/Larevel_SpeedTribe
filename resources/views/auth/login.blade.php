@@ -1,10 +1,18 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+
+    <!-- Header -->
+    <header>
+        <a href="{{ route('home') }}" class="home-link">
+            <h1>Speed Tribe</h1>
+        </a>
+        <img src="{{ asset('images/f1header.png') }}" alt="F1 Car" class="f1-car">
+    </header>
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
-
 
         <!-- Email Address -->
         <div>
