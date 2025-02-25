@@ -1,35 +1,90 @@
-/* Conteneur principal */
-.dashboard-container {
-    position: relative;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Assure que les tailles incluent les bordures et paddings */
 }
 
-/* Image de fond pleine largeur */
-.dashboard-image {
-    width: 100%;
-    height: auto; /* Pour garder le ratio */
+/* Fond et typographie globale */
+body {
+    background-color: #595656;
+    font-family: Arial, sans-serif;
+}
+
+/* Image F1 sous le header, collée au header */
+
+.home-image {
     display: block;
+    width: 100%; /* Utilisation de 100% pour éviter le décalage lié à 100vw */
+    max-height: 60vh; /* Hauteur réduite */
+    object-fit: cover;
+    margin-top: 0; /* S'assure qu'il n'y a pas de marge inutile */
+    padding: 0;
+    border-radius: 20px; /* Bords arrondis pour l'image F1 */
 }
 
-/* Overlay pour le texte */
-.dashboard-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white; /* Fond blanc pour le contraste */
-    padding: 1.5rem 3rem;
+/* Conteneur principal */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px;
+}
+
+/* Rangées pour les sections alternées */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    background-color: #4c4a4a;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Conteneurs pour images et boutons */
+.image-container, .button-container {
+    flex: 1;
     text-align: center;
 }
 
-/* Style du texte */
-.dashboard-overlay h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    color: black; /* Couleur du texte */
+/* Images podium Alpine */
+.podium-image {
+    max-width: 50%; /* Taille réduite pour mieux s'adapter */
+    height: auto;
+    border-radius: 20px; /* Bords arrondis pour l'image */
+}
+
+/* Texte sous l'image */
+p {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0077cc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #005fa3;
+}
+
+/* Alternance des rangées : impaire = image à gauche, paire = image à droite */
+.row:nth-child(odd) {
+    flex-direction: row;
+}
+
+.row:nth-child(even) {
+    flex-direction: row-reverse;
 }

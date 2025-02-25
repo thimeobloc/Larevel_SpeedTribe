@@ -8,17 +8,25 @@
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 </head>
 <body>
+<!-- Header -->
 @include('partials.header')
 
-<main>
-    <div class="dashboard-container">
-        <img src="{{ asset('images/f1_background.jpg') }}" alt="F1 Race" class="dashboard-image">
-        <div class="dashboard-overlay">
-            <h1>Hello, {{ Auth::user()->name }} !</h1>
+<!-- Main content -->
+<main class="home-container">
+    <!-- F1 background image under the header -->
+    <img src="{{ asset('images/f1_background.jpg') }}" alt="F1 Race" class="home-image">
+
+    <!-- First row: Image on the left, button on the right -->
+    <section class="row">
+        <div class="image-container">
+            <img src="{{ asset('images/podium_alpine.jpg') }}" alt="Alpine Podium" class="podium-image">
+
+            <p>Alpine takes the podium — a glorious moment in F1 history!</p>
+        </div>
+        <div class="button-container">
             <a href="{{ route('profile.setup') }}" class="btn btn-primary">Set up your profile</a>
         </div>
-    </div>
+    </section>
 </main>
-
 </body>
 </html>
