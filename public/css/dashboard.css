@@ -1,0 +1,35 @@
+/* Conteneur principal */
+.dashboard-container {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image de fond pleine largeur */
+.dashboard-image {
+    width: 100%;
+    height: auto; /* Pour garder le ratio */
+    display: block;
+}
+
+/* Overlay pour le texte */
+.dashboard-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; /* Fond blanc pour le contraste */
+    padding: 1.5rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Style du texte */
+.dashboard-overlay h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: black; /* Couleur du texte */
+}

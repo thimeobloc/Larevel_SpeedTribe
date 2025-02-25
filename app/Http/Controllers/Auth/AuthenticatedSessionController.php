@@ -25,12 +25,10 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
         $request->session()->regenerate();
 
-        // Redirige vers la page d'accueil après connexion
-        return redirect()->intended(route('home'));
-
+        // Redirige vers le tableau de bord après connexion
+        return redirect('/dashboard');
     }
 
     /**
@@ -41,7 +39,6 @@ class AuthenticatedSessionController extends Controller
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
         // Redirige vers l'accueil après déconnexion

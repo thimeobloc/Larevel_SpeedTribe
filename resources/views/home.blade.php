@@ -13,7 +13,7 @@
 
 <main>
     <img src="{{ asset('images/f1_background.jpg') }}" alt="F1 Race" class="home-image">
-    <h1>Welcome to the F1 Fans Website</h1>
+    <h1>TEST</h1>
 </main>
 </body>
 </html>

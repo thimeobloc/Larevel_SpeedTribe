@@ -1,17 +1,23 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard F1</title>
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+</head>
+<body>
+@include('partials.header')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+<main>
+    <div class="dashboard-container">
+        <img src="{{ asset('images/f1_background.jpg') }}" alt="F1 Race" class="dashboard-image">
+        <div class="dashboard-overlay">
+            <h1>Hello, {{ Auth::user()->name }} !</h1>
         </div>
     </div>
-</x-app-layout>
+</main>
+
+</body>
+</html>
