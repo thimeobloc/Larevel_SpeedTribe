@@ -15,6 +15,7 @@
         <img src="{{ asset('images/f1_background.jpg') }}" alt="F1 Race" class="dashboard-image">
         <div class="dashboard-overlay">
             <h1>Hello, {{ Auth::user()->name }} !</h1>
+            <a href="{{ route('profile.setup') }}" class="btn btn-primary">Set up your profile</a>
         </div>
     </div>
 </main>

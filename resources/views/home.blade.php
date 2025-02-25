@@ -1,4 +1,3 @@
-<!-- resources/views/home.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +13,7 @@
 <main>
     <img src="{{ asset('images/f1_background.jpg') }}" alt="F1 Race" class="home-image">
     <h1>TEST</h1>
+    <a href="{{ route('profile.setup') }}" class="btn btn-primary">Set up your profile</a>
 </main>
 </body>
 </html>

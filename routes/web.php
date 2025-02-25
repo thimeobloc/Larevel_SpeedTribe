@@ -32,3 +32,12 @@ Route::middleware('auth')->group(function () {
 
 // Include auth routes (Laravel Breeze / Jetstream)
 require __DIR__.'/auth.php';
+
+// Profile setup routes (protected by auth)
+Route::middleware('auth')->group(function () {
+    // Affiche le formulaire pour configurer les préférences (équipe et pilote favoris)
+    Route::get('/profile/setup', [ProfileController::class, 'setup'])->name('profile.setup');
+
+    // Met à jour les préférences de l'utilisateur
+    Route::patch('/profile/setup', [ProfileController::class, 'updatePreferences'])->name('profile.updatePreferences');
+});
