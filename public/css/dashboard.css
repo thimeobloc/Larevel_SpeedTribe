@@ -12,14 +12,27 @@ body {
 }
 
 /* Image F1 sous le header, collée au header */
-.home-image {
-    display: block;
+.home-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-height: 60vh;
-    object-fit: cover;
-    margin-top: 0;
-    padding: 0;
     border-radius: 20px;
+    overflow: hidden;
+}
+
+.home-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.f1-logo {
+    position: absolute;
+    max-width: 200px;
+    height: auto;
 }
 
 /* Conteneur principal */
@@ -47,8 +60,8 @@ body {
     text-align: center;
 }
 
-/* Images podium Alpine */
-.podium-image, .team-car-image {
+/* Images podium Alpine et voitures */
+.podium-image, .team-car-image, .driver-image {
     max-width: 50%;
     height: auto;
     border-radius: 20px;
@@ -81,13 +94,16 @@ p {
 }
 
 /* Team section styling */
-.team-image-container img {
+.team-image-container img, .driver-image-container img {
     max-width: 70%;
     height: auto;
     margin-bottom: 10px;
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.team-image-container p {
+.team-image-container p, .driver-image-container p {
     font-size: 1.2em;
     font-weight: bold;
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Team;
+use App\Models\Pilot;
 
 // Home page
 Route::get('/', function () {
@@ -13,11 +14,9 @@ Route::get('/', function () {
 
 // Dashboard (protected by auth and email verification)
 Route::get('/dashboard', function () {
-    $user = Auth::user();
-    $team = $user->team; // Récupère l'équipe liée
+    $user = Auth::user()->load('team', 'pilot'); // Charge les relations team et pilot
     return view('dashboard', ['user' => $user]);
 })->middleware(['auth', 'verified'])->name('dashboard');
-
 
 // Authentication routes
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');

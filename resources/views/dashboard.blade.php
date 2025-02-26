@@ -14,8 +14,10 @@
 <!-- Main content -->
 <main class="home-container">
     <!-- F1 background image under the header -->
-    <img src="{{ asset('images/f1_background.jpg') }}" alt="F1 Race" class="home-image">
-
+    <div class="home-image-container">
+        <img src="{{ asset('images/f1_background.jpg') }}" alt="F1 Race" class="home-image">
+        <img src="{{ asset('images/logof1.png') }}" alt="F1 Logo" class="f1-logo">
+    </div>
     <!-- First row: Image on the left, button on the right -->
     <section class="row">
         <!-- Alpine Podium Image -->
@@ -24,7 +26,7 @@
             <p>Alpine takes the podium — a glorious moment in F1 history!</p>
         </div>
 
-        <!-- Favorite Team Car -->
+        <!-- Favorite Team Car and Favorite Driver -->
         <div class="team-section">
             @if($user->team)
                 <div class="team-image-container">
@@ -35,6 +37,17 @@
                 </div>
             @else
                 <p>You haven't selected a team yet.</p>
+            @endif
+
+            @if($user->pilot)
+                <div class="team-image-container">
+                    <img src="{{ asset('images/pilotes/' . $user->pilot->name . '.png') }}"
+                         alt="{{ $user->pilot->name }}"
+                         class="team-car-image">
+                    <p>Your favorite driver: {{ $user->pilot->name }}</p>
+                </div>
+            @else
+                <p>You haven't selected a driver yet.</p>
             @endif
         </div>
 

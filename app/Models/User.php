@@ -2,11 +2,9 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\Team;
 
 class User extends Authenticatable
 {
@@ -22,6 +20,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'favorite_team',
+        'favorite_driver',
     ];
 
     /**
@@ -47,9 +47,19 @@ class User extends Authenticatable
         ];
     }
 
+    /**
+     * Get the team associated with the user.
+     */
     public function team()
     {
         return $this->belongsTo(Team::class, 'favorite_team');
     }
 
+    /**
+     * Get the pilot associated with the user.
+     */
+    public function pilot()
+    {
+        return $this->belongsTo(Pilot::class, 'favorite_driver');
+    }
 }
