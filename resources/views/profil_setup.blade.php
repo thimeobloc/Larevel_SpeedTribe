@@ -2,9 +2,10 @@
 
 @section('content')
     <header>
-        <a href="{{ route('home') }}" class="home-link">
+        <a href="{{ auth()->check() ? route('dashboard') : route('home') }}" class="home-link">
             <h1>Speed Tribe</h1>
         </a>
+
         <img src="{{ asset('images/f1header.png') }}" alt="F1 Car" class="f1-car">
         <link rel="stylesheet" href="{{ asset('css/profil_setup.css') }}">
     </header>

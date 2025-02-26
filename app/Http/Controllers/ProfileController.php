@@ -68,7 +68,8 @@ class ProfileController extends Controller
         $user->favorite_driver = $request->input('favorite_driver');
         $user->save();
 
-        return Redirect::route('profile.setup')->with('status', 'Preferences updated successfully!');
+        // Redirection vers le dashboard avec un message de confirmation
+        return Redirect::route('dashboard')->with('status', 'Preferences updated successfully!');
     }
 
     /**

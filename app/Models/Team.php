@@ -9,7 +9,7 @@ class Team extends Model
 {
     use HasFactory;
 
-    protected $table = 'teams'; // Lien avec la table existante
-    protected $fillable = ['name'];
-    public $timestamps = false; // Si tes tables n'ont pas de colonnes created_at et updated_at
+    protected $table = 'teams'; // Assure le bon lien avec la table
+    protected $fillable = ['name']; // Ajoute les colonnes modifiables
+    public $timestamps = false; // Si pas de created_at et updated_at
 }

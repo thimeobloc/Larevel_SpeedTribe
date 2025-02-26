@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Team;
 
 // Home page
 Route::get('/', function () {
@@ -12,9 +13,11 @@ Route::get('/', function () {
 
 // Dashboard (protected by auth and email verification)
 Route::get('/dashboard', function () {
-    $user = Auth::user(); // Récupère l'utilisateur connecté
+    $user = Auth::user();
+    $team = $user->team; // Récupère l'équipe liée
     return view('dashboard', ['user' => $user]);
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 // Authentication routes
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
@@ -30,14 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Include auth routes (Laravel Breeze / Jetstream)
-require __DIR__.'/auth.php';
-
 // Profile setup routes (protected by auth)
 Route::middleware('auth')->group(function () {
-    // Affiche le formulaire pour configurer les préférences (équipe et pilote favoris)
     Route::get('/profile/setup', [ProfileController::class, 'setup'])->name('profile.setup');
-
-    // Met à jour les préférences de l'utilisateur
     Route::patch('/profile/setup', [ProfileController::class, 'updatePreferences'])->name('profile.updatePreferences');
 });

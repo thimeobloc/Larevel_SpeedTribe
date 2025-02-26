@@ -12,15 +12,14 @@ body {
 }
 
 /* Image F1 sous le header, collée au header */
-
 .home-image {
     display: block;
-    width: 100%; /* Utilisation de 100% pour éviter le décalage lié à 100vw */
-    max-height: 60vh; /* Hauteur réduite */
+    width: 100%;
+    max-height: 60vh;
     object-fit: cover;
-    margin-top: 0; /* S'assure qu'il n'y a pas de marge inutile */
+    margin-top: 0;
     padding: 0;
-    border-radius: 20px; /* Bords arrondis pour l'image F1 */
+    border-radius: 20px;
 }
 
 /* Conteneur principal */
@@ -43,16 +42,16 @@ body {
 }
 
 /* Conteneurs pour images et boutons */
-.image-container, .button-container {
+.image-container, .button-container, .team-section {
     flex: 1;
     text-align: center;
 }
 
 /* Images podium Alpine */
-.podium-image {
-    max-width: 50%; /* Taille réduite pour mieux s'adapter */
+.podium-image, .team-car-image {
+    max-width: 50%;
     height: auto;
-    border-radius: 20px; /* Bords arrondis pour l'image */
+    border-radius: 20px;
 }
 
 /* Texte sous l'image */
@@ -69,15 +68,28 @@ p {
     font-size: 1.2em;
     text-decoration: none;
     color: #fff;
-    background-color: #0077cc;
+    background-color: #e10600;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #005fa3;
+    transform: scale(1.05);
+    background-color: #a80400;
+}
+
+/* Team section styling */
+.team-image-container img {
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.team-image-container p {
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 /* Alternance des rangées : impaire = image à gauche, paire = image à droite */
